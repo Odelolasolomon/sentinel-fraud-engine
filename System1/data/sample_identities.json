@@ -1,0 +1,26 @@
+[
+    {
+        "id": "synthetic_01",
+        "full_name": "Alice Wonderland",
+        "email": "alice@rabbit.hole",
+        "phone": "+1000000001",
+        "ssn_last4": "0001",
+        "dob": "2008-05-12",
+        "credit_score": 820,
+        "history_months": 240,
+        "ip_address": "127.0.0.1",
+        "device_id": "laptop_01"
+    },
+    {
+        "id": "synthetic_02",
+        "full_name": "Bob Builder",
+        "email": "bob@fix.it",
+        "phone": "+1000000001",
+        "ssn_last4": "0002",
+        "dob": "1995-10-10",
+        "credit_score": 650,
+        "history_months": 12,
+        "ip_address": "127.0.0.1",
+        "device_id": "laptop_02"
+    }
+]

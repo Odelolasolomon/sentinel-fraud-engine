@@ -1,0 +1,30 @@
+version: '3.8'
+
+# Enterprise Fraud Prevention: System 1 (Synthetic Identity & ATO)
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend/data:/app/data
+      - .backend/app.db:/app/app.db
+    environment:
+      - SECRET_KEY=A_VERY_SECRET_KEY_FOR_JWT_OR_CHALLENGES
+      - BACKEND_CORS_ORIGINS=["*"]
+      - SQLALCHEMY_DATABASE_URL=sqlite:///./app.db
+    restart: always
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+    environment:
+      - VITE_API_URL=http://localhost:8000
+    depends_on:
+      - backend
+    restart: always
