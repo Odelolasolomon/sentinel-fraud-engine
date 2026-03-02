@@ -22,6 +22,25 @@ Passive session monitoring to prevent high-velocity takeover and hijacking.
 
 ---
 
+## 🎨 Interactive Dashboards & System Architecture
+
+### 🖥️ Live Figma Prototype
+Access the high-fidelity interactive dashboard design here:
+**[View Live Figma Dashboard](https://icon-quota-29574500.figma.site/)**
+
+> [!TIP]
+> **Pro Tip for "Auto-Play" Preview:**
+> GitHub READMEs do not support live iframes (Figma embeds) for security reasons. To make the dashboard "play" automatically in this README:
+> 1. Record a short (5-10s) clip of your Figma prototype in action.
+> 2. Convert it to a high-quality **.gif** or **.mp4**.
+> 3. Upload the file to the repository and embed it using: `![Dashboard Alpha](path/to/your/animation.gif)`
+
+### 🏛️ System Design Diagram
+![System Architecture](c:/Users/HomePC/Documents/Applications/Assesments/Corvyn AI/system_design.png)
+*Architecture of the Sentinel Fraud Engine: Ingestion, Multi-Engine Analysis, and Central Decision Layer.*
+
+---
+
 ## 🛠️ Global Architecture (Institutional Standard)
 
 Both systems follow an **Enterprise Factory Pattern**:
