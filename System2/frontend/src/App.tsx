@@ -3,12 +3,10 @@ import axios from 'axios';
 import {
   Fingerprint,
   Smartphone,
-  Wifi,
   ShieldCheck,
   AlertTriangle,
   Activity,
   Cpu,
-  ArrowUpRight,
   TrendingUp,
   RotateCcw
 } from 'lucide-react';
@@ -21,9 +19,6 @@ import {
   ResponsiveContainer,
   LineChart,
   Line,
-  XAxis,
-  YAxis,
-  CartesianGrid,
   Tooltip
 } from 'recharts';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -40,24 +35,15 @@ const mockProfile = [
 function App() {
   const [similarity, setSimilarity] = useState(0.92);
   const [status, setStatus] = useState<'SECURE' | 'CAUTION' | 'HIJACK'>('SECURE');
-  const [telemetry, setTelemetry] = useState({
-    pitch: 0.45,
-    roll: 0.12,
-    pressure: 0.61,
-    velocity: 1.22
-  });
-
-  const [stats, setStats] = useState<any>(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8001';
-        const [statsRes, vectorRes] = await Promise.all([
+        await Promise.all([
           axios.get(`${apiUrl}/api/v1/stats`),
           axios.get(`${apiUrl}/api/v1/vector-state`)
         ]);
-        setStats(statsRes.data);
       } catch (err) {
         console.warn("Biometric API Offline - Using fallback sim");
       }
